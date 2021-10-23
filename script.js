@@ -1,21 +1,19 @@
 const [inputFile, inputURL] = document.querySelectorAll('input')
 const div = document.querySelector('div')
 
-const handle = (filename, imgSrc) =>
+const handle = (filename, imgSrc, pass) =>
 {
-	return new Promise(resolve => {
-		const img = document.createElement('img')
-		img.src = imgSrc
-		img.crossOrigin = ''
+	const img = document.createElement('img')
+	img.src = imgSrc
+	img.crossOrigin = ''
 
-		img.addEventListener('load', () => {
-			const color = 'rgba(' + img.getRgba().join(', ') + ')'
-			const p = document.createElement('p')
-			p.style.color = color
-			p.textContent = filename + ' => ' + color
+	img.addEventListener('load', () => {
+		const color = 'rgba(' + img.getRgba().join(', ') + ')'
+		const p = document.createElement('p')
+		p.style.color = color
+		p.textContent = filename + ' => ' + color
 
-			resolve(p)
-		})
+		pass(p)
 	})
 }
 
@@ -25,9 +23,7 @@ inputFile.addEventListener('change', () => {
 		const reader = new FileReader
 
 		reader.addEventListener('load', () => {
-			handle(file.name, reader.result).then(img => {
-				div.prepend(img)
-			})
+			handle(file.name, reader.result, img => div.prepend(img))
 		})
 
 		reader.readAsDataURL(file)
@@ -58,9 +54,7 @@ inputURL.addEventListener('input', () => {
 				alert(protocol + ' is an unsupported protocol')
 		}
 
-		if (filename) handle(filename, href).then(img => {
-			div.prepend(img)
-		})
+		if (filename) handle(filename, href, img => div.prepend(img))
 	}
 	catch ({ message }) { alert(message) }
 })
