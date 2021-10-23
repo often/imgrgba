@@ -1,7 +1,5 @@
-# imgrgba
+# [imgrgba](https://imgrgba.sany.one)
 get rgba values from an image
-
-[website](https://imgrgba.sany.one)
 
 ## why?
 I got the idea randomly while talking with a friend.
