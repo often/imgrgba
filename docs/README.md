@@ -3,7 +3,7 @@ a quick guide on how to use **imgrgba** as a library.
 
 ## basic usage
 ```html
-<script src='https://imgrgba.sany.one/lib.js'></script>
+<script src='https://often.github.io/imgrgba/lib.js'></script>
 <script>
    const img = document.createElement('img')
    img.src = '...'
@@ -21,7 +21,7 @@ a quick guide on how to use **imgrgba** as a library.
 
 ## ESM usage
 ```js
-import { getRgba } from 'https://imgrgba.sany.one/lib.esm.js'
+import { getRgba } from 'https://often.github.io/imgrgba/lib.esm.js'
 
 // from here, use the `getRgba` function
 // ...
