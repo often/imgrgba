@@ -1,4 +1,4 @@
-# [imgrgba](https://imgrgba.sany.one)
+# [imgrgba](https://often.github.io/imgrgba/)
 get rgba values from an image
 
 ## why?
